@@ -7,5 +7,16 @@
   </head>
   <body>
     <script type="module" src="./index.js"></script>
+    <canvas
+      width="20"
+      height="20"
+      style="image-rendering: pixelated; image-rendering: crisp-edges; width: 100%;"
+    >
+    <!-- Note: https://css-tricks.com/almanac/properties/i/image-rendering/
+    At the time of this update, Firefox 61 supports crisp-edges but not pixelated
+    and Chrome 68 supports pixelated but not crisp-edges.
+
+    Also, cool effect image-rendering: pixelated is turned off! -->
+    </canvas>
   </body>
 </html>
