@@ -1,15 +1,16 @@
 // Import our outputted wasm ES6 module
 // Which, export default's, an initialization function
-import init from "./pkg/wasm_examples.js";
+import wasmInit from "./pkg/wasm_examples.js";
 
 const runWasm = async () => {
   // Instantiate our wasm module
-  const wasmAdd = await init("./pkg/wasm_examples_bg.wasm");
+  const rustWasm = await wasmInit("./pkg/wasm_examples_bg.wasm");
 
   // Call the Add function export from wasm, save the result
-  const addResult = wasmAdd.add(21, 21);
+  const result = rustWasm.call_me_from_javascript(21, 21);
 
-  // Set the result onto the body
-  document.body.textContent = `Hello World! addResult: ${addResult}`;
+  console.log(result); // Should output '66'
+  console.log(rustWasm.ADD_CONSTANT); // Should output 'undefined'
+  console.log(rustWasm.add_integer_with_constant); // Should output 'undefined'
 };
 runWasm();
