@@ -7,16 +7,19 @@
   </head>
   <body>
     <script type="module" src="./index.js"></script>
-    <canvas
-      width="20"
-      height="20"
-      style="image-rendering: pixelated; image-rendering: crisp-edges; width: 100%;"
-    >
-    <!-- Note: https://css-tricks.com/almanac/properties/i/image-rendering/
-    At the time of this update, Firefox 61 supports crisp-edges but not pixelated
-    and Chrome 68 supports pixelated but not crisp-edges.
+    <h1>NOTE: Be careful if using headphones</h1>
 
-    Also, cool effect image-rendering: pixelated is turned off! -->
-    </canvas>
+    <h1>Original Square Wave</h1>
+    <div><button onclick="playOriginal()">Play</button></div>
+
+    <hr />
+
+    <h1>Amplified Square Wave</h1>
+    <div><button onclick="playAmplified()">Play</button></div>
+
+    <hr />
+
+    <h1>Pause</h1>
+    <div><button onclick="pause()">Pause</button></div>
   </body>
 </html>
